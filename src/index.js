@@ -5,10 +5,13 @@ const todolist = [{ description: 'Learn webpack', completed: false, index: 1 }, 
 
 todolist.sort((a, b) => a.index - b.index);
 
-document.querySelector('.todo-list').innerHTML = todolist.map((todo) => `<li class="todo-item">
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelector('.todo-list').innerHTML = todolist.map((todo) => `<li class="todo-item">
                 <input class="item-input" type="checkbox" data-index="${todo.index}" id="item${todo.index}" ${todo.completed ? 'checked' : ''}/>
                 <label class="item-label" for="item${todo.index}">${todo.description}</label>
             </li>`).join('');
+});
+
 const myIcon = new Image();
 myIcon.src = icon;
 myIcon.className = 'my-icon';
