@@ -28,4 +28,22 @@ export default class ToDolist {
       id,
     });
   }
+
+  DeleteToDo(id) {
+    this.#toDo.splice(id, 1);
+  }
+
+  SaveToDolistLocal() {
+    localStorage.setItem('toDo', JSON.stringify(this.#toDo));
+  }
+
+  LoadToDoFromLocal() {
+    const savedToDo = JSON.parse(localStorage.getItem('toDo'));
+
+    if (Array.isArray(savedToDo)) {
+      this.#toDo = savedToDo;
+      return true;
+    }
+    return false;
+  }
 }
