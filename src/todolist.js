@@ -18,4 +18,14 @@ export default class ToDolist {
       this.#toDo[index].id = index;
     }
   }
+
+  // Methods
+  AddToDo(activity, doneBox) {
+    const id = this.#toDo.length;
+    this.#toDo.push({
+      activity,
+      doneBox,
+      id,
+    });
+  }
 }
