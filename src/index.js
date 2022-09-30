@@ -1,21 +1,20 @@
-import _ from 'lodash';
 import './style.css';
-import Icon from './icon.png';
+import icon from './icon.png';
 
-function component() {
-  const element = document.createElement('div');
+const todolist = [{ description: 'Learn webpack', completed: false, index: 1 }, { description: 'Learn React', completed: false, index: 2 }, { description: 'Learn React Native', completed: false, index: 0 }];
 
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
+todolist.sort((a, b) => a.index - b.index);
 
-  // Add the image to our existing div.
-  const myIcon = new Image();
-  myIcon.src = Icon;
+// eslint-disable-next-line no-unused-vars
+window.addEventListener('DOMContentLoaded', (event) => {
+  document.querySelector('.todo-list').innerHTML = todolist.map((todo) => `<li class="todo-item">
+                <input class="item-input" type="checkbox" data-index="${todo.index}" id="item${todo.index}" ${todo.completed ? 'checked' : ''}/>
+                <label class="item-label" for="item${todo.index}">${todo.description}</label>
+            </li>`).join('');
+});
 
-  element.appendChild(myIcon);
-
-  return element;
-}
-
-document.body.appendChild(component());
+const myIcon = new Image();
+myIcon.src = icon;
+myIcon.className = 'my-icon';
+const iconelement = document.querySelector('.header');
+iconelement.appendChild(myIcon);
