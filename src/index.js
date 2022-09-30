@@ -1,7 +1,7 @@
 import './style.css';
 import icon from './icon.png';
 import ToDolist from './todolist.js';
-import { modificarBox, modifyDescription } from './modify.js';
+import { modificarBox, modifyDescription, deleteToDo } from './modify.js';
 // import complete from './delete.js';
 
 const myToDolist = new ToDolist();
@@ -49,18 +49,11 @@ const render = () => {
 
     // Remove Button
     const deleteButton = document.createElement('input-btn');
+    const idToDelete = deleteButton.id;
 
-    // eslint-disable-next-line
-    function deleteToDo() {
-      const idToDelete = deleteButton.id;
-      myToDolist.DeleteToDo(idToDelete);
-      myToDolist.reorder();
-      myToDolist.SaveToDolistLocal();
-      render();
-    }
     deleteButton.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
     deleteButton.classList.add('delButton');
-    deleteButton.onclick = deleteToDo;
+    deleteButton.onclick = deleteToDo(idToDelete, myToDolist, render);
     deleteButton.id = toDo.id;
     element.appendChild(deleteButton);
   }

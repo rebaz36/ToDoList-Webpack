@@ -8,4 +8,11 @@ function modifyDescription(index, valor, myToDolist) {
   myToDolist.SaveToDolistLocal();
 }
 
-export { modificarBox, modifyDescription };
+function deleteToDo(idToDelete, myToDolist, render) {
+  myToDolist.DeleteToDo(idToDelete);
+  myToDolist.reorder();
+  myToDolist.SaveToDolistLocal();
+  render();
+}
+
+export { modificarBox, modifyDescription, deleteToDo };
