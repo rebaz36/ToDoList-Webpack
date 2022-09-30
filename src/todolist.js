@@ -14,18 +14,18 @@ export default class ToDolist {
   }
 
   reorder() {
-    for (let index = 0; index < this.#toDo.length; index += 1) {
-      this.#toDo[index].id = index;
+    for (let Index = 0; Index < this.#toDo.length; Index += 1) {
+      this.#toDo[Index].index = Index;
     }
   }
 
   // Methods
-  AddToDo(activity, doneBox) {
-    const id = this.#toDo.length;
+  AddToDo(description, completed) {
+    const index = this.#toDo.length + 1;
     this.#toDo.push({
-      activity,
-      doneBox,
-      id,
+      description,
+      completed,
+      index,
     });
   }
 
