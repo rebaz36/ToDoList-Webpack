@@ -1,21 +1,12 @@
 import './style.css';
 import icon from './icon.png';
 import ToDolist from './todolist.js';
+import { modificarBox, modifyDescription } from './modify.js';
 // import complete from './delete.js';
 
 const myToDolist = new ToDolist();
 
 myToDolist.LoadToDoFromLocal();
-
-function modificarBox(index, valor) {
-  myToDolist.ToDo[index].doneBox = valor;
-  myToDolist.SaveToDolistLocal();
-}
-
-function modifyDescription(index, valor) {
-  myToDolist.ToDo[index].activity = valor;
-  myToDolist.SaveToDolistLocal();
-}
 
 const render = () => {
   document.querySelector('.ToDoList').innerHTML = '';
@@ -25,29 +16,29 @@ const render = () => {
     const List = document.querySelector('.ToDoList');
     const element = document.createElement('li');
     element.classList.add('eachToDo');
-    const doneBox = document.createElement('input');
-    doneBox.type = 'checkbox';
+    const completed = document.createElement('input');
+    completed.type = 'checkbox';
     const inputTask = document.createElement('input');
     inputTask.type = 'text';
     inputTask.classList.add('item-input');
-    doneBox.classList.add('doneBox');
-    inputTask.value = toDo.activity;
-    element.append(doneBox, inputTask);
-    doneBox.setAttribute('id', toDo.id);
+    completed.classList.add('completed');
+    inputTask.value = toDo.description;
+    element.append(completed, inputTask);
+    completed.setAttribute('id', toDo.id);
     inputTask.disabled = false;
-    doneBox.checked = toDo.doneBox;
-    if (doneBox.checked) {
+    completed.checked = toDo.completed;
+    if (completed.checked) {
       inputTask.style.textDecoration = 'line-through';
     }
 
     inputTask.addEventListener('change', () => {
-      modifyDescription(index, inputTask.value);
+      modifyDescription(index, inputTask.value, myToDolist);
     });
 
-    doneBox.addEventListener('click', () => {
-      modificarBox(index, doneBox.checked);
+    completed.addEventListener('click', () => {
+      modificarBox(index, completed.checked, myToDolist);
 
-      if (doneBox.checked) {
+      if (completed.checked) {
         inputTask.style.textDecoration = 'line-through';
       } else {
         inputTask.style.textDecoration = 'none';
