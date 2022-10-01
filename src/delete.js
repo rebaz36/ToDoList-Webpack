@@ -1,7 +1,7 @@
 const removeCompleted = document.querySelector('.clear-btn');
 export default function complete(myToDolist, render) {
   removeCompleted.addEventListener('click', () => {
-    const temp = myToDolist.ToDo.filter(({ completed }) => !completed);
+    const temp = myToDolist.ToDo.filter(({ doneBox }) => !doneBox);
     myToDolist.SetToDo(temp);
     myToDolist.reorder();
     myToDolist.SaveToDolistLocal();
