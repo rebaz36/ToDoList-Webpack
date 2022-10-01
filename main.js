@@ -115,7 +115,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \***********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ complete)\n/* harmony export */ });\nconst removeCompleted = document.querySelector('.clear-btn');\nfunction complete(myToDolist, render) {\n  removeCompleted.addEventListener('click', () => {\n    const temp = myToDolist.ToDo.filter(({ doneBox }) => !doneBox);\n    myToDolist.SetToDo(temp);\n    myToDolist.reorder();\n    myToDolist.SaveToDolistLocal();\n    render();\n  });\n}\n\n//# sourceURL=webpack://webpack-boilerplate/./src/delete.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ complete)\n/* harmony export */ });\nconst removeCompleted = document.querySelector('.clear-btn');\nfunction complete(myToDolist, render) {\n  removeCompleted.addEventListener('click', () => {\n    const temp = myToDolist.ToDo.filter(({ completed }) => !completed);\n    myToDolist.SetToDo(temp);\n    myToDolist.reorder();\n    myToDolist.SaveToDolistLocal();\n    render();\n  });\n}\n\n//# sourceURL=webpack://webpack-boilerplate/./src/delete.js?");
 
 /***/ }),
 
