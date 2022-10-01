@@ -3,21 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/4e5bc16f7d.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/30e8639a7b.js" crossorigin="anonymous"></script>
     <title>Todo List</title>
 <script defer src="runtime.js"></script><script defer src="main.js"></script></head>
 <body>
     <div class="container">
         <div class="header">
             <h1>Todo List</h1>
-            
         </div>
-        <div class="input-container">
-            <input class="todo-input" type="text" id="todo" placeholder="Today's Todo List">
-        </div>
-        <div class="todo-list">
 
+        <div class="input-container">
+            <input class="todo-input" type="text" name="toDoTitle" id="activity" placeholder="Add to your list...">
+            <button type="submit" id="eye" class="input-btn"> <i class="fa-solid fa-arrow-right-to-bracket"></i></button>
         </div>
-        <button type="button" class="clear-btn">Clear all completed</button>
+
+        <div class="ToDoList">
+           
+        </div>
+
+        
+        <button type="submit" class="clear-btn">Clear all completed</button>
+        
+ 
     </div>
 </body>
 </html>
