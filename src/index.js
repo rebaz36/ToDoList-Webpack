@@ -1,20 +1,27 @@
 import './style.css';
 import icon from './icon.png';
+import { render, myToDolist } from './modify.js';
+// import complete from './delete.js';
 
-const todolist = [{ description: 'Learn webpack', completed: false, index: 1 }, { description: 'Learn React', completed: false, index: 2 }, { description: 'Learn React Native', completed: false, index: 0 }];
+myToDolist.LoadToDoFromLocal();
 
-todolist.sort((a, b) => a.index - b.index);
-
-// eslint-disable-next-line no-unused-vars
-window.addEventListener('DOMContentLoaded', (event) => {
-  document.querySelector('.todo-list').innerHTML = todolist.map((todo) => `<li class="todo-item">
-                <input class="item-input" type="checkbox" data-index="${todo.index}" id="item${todo.index}" ${todo.completed ? 'checked' : ''}/>
-                <label class="item-label" for="item${todo.index}">${todo.description}</label>
-            </li>`).join('');
+render();
+// Controller
+const button = document.querySelector('.input-btn');
+button.addEventListener('click', () => {
+  const titletextbox = document.getElementById('activity');
+  const toDop = titletextbox.value;
+  myToDolist.AddToDo(toDop, false);
+  myToDolist.SaveToDolistLocal();
+  titletextbox.value = '';
+  render();
 });
+
+// complete(myToDolist, render);
 
 const myIcon = new Image();
 myIcon.src = icon;
 myIcon.className = 'my-icon';
 const iconelement = document.querySelector('.header');
+
 iconelement.appendChild(myIcon);

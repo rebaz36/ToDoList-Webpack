@@ -1,8 +1,6 @@
-# webpack-boilerplate
+# ToDoList - WebPack
 
-## Template
-
-this project is created to be used as a webpack template
+> To do list web application built using Webpack.
 
 
 ## Built With
@@ -13,6 +11,10 @@ this project is created to be used as a webpack template
 - Git
 - webpack
 
+## Live Demo (if available)
+
+[Live Demo Link]( https://rebaz36.github.io/ToDoList-Webpack/)
+
 ## Authors
 
 👤 **Rebaz Farid**
@@ -20,9 +22,12 @@ this project is created to be used as a webpack template
 - GitHub: [@Rebaz Farid](https://github.com/rebaz36)
 - Twitter: [@Rebaz Farid](https://twitter.com/rebaz415)
 - LinkedIn: [@Rebaz Farid](https://www.linkedin.com/in/rebazf/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
 
 ## Show your support
 
@@ -39,3 +44,5 @@ Give a ⭐️ if you like this project!
 ## 📝 License
 
 This project is [MIT](./MIT.md) licensed.
+
+![](https://img.shields.io/badge/Microverse-blueviolet)
