@@ -1,7 +1,7 @@
 import './style.css';
 import icon from './icon.png';
 import { render, myToDolist } from './modify.js';
-// import complete from './delete.js';
+import complete from './delete.js';
 
 myToDolist.LoadToDoFromLocal();
 
@@ -17,7 +17,7 @@ button.addEventListener('click', () => {
   render();
 });
 
-// complete(myToDolist, render);
+complete(myToDolist, render);
 
 const myIcon = new Image();
 myIcon.src = icon;
