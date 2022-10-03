@@ -1,31 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/4e5bc16f7d.js" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/30e8639a7b.js" crossorigin="anonymous"></script>
-    <title>Todo List</title>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>Todo List</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
+    <title>Todo List Web App</title>
+    
+  </head>
+  <body>
+    <main>
+      <section class="list-div">
+        <div class="title">
+          <h1>Today's To Do List</h1>
+          <span><i class="fas fa-sync"></i></span>
         </div>
-
-        <div class="input-container">
-            <input class="todo-input" type="text" name="toDoTitle" id="activity" placeholder="Add to your list..." required>
-            <button type="submit" id="eye" class="input-btn"> <i class="fa-solid fa-arrow-right-to-bracket"></i></button>
+        <div class="input-text">
+          <form id="form">
+            <input
+              type="text"
+              name="tasks"
+              placeholder="Add to your list"
+              class="insert-text"
+            />
+            <i id="icon" class="fas fa-hand-point-left"></i>
+          </form>
         </div>
-
-        <div class="ToDoList">
-           
+        <ul class="list-container">
+          
+        </ul>
+        <div class="clear-elements">
+          <button class="clear-btn" type="submit">Clear all completed</button>
         </div>
-
-        
-        <button type="submit" class="clear-btn">Clear all completed</button>
-        
- 
-    </div>
-</body>
+      </section>
+    </main>
+    <script src="index.js"></script>
+  </body>
 </html>
