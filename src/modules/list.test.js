@@ -9,4 +9,10 @@ describe('Add and remove', () => {
     expect(list.list.length).toBe(listLength + 1);
   });
 
+  test('Expect removeItem to increase list length', () => {
+    const listLength = list.list.length;
+    list.removeItemByIndex(0);
+    expect(list.list.length).toBe(listLength - 1);
+  });
 });
+
