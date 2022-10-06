@@ -60,7 +60,7 @@ describe('DOM Tests', () => {
     li.innerHTML = 'This has changed';
     expect(li.innerHTML).not.toBe(initialText);
   });
-  
+
   test('Expect updating an item\'s "completed" status.', () => {
     const list1 = new List(Item, 'testing list2', 'test list sto2');
     document.body.innerHTML = '<div><ul id="list"></ul></div>';
