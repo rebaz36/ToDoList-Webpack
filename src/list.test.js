@@ -27,7 +27,6 @@ describe('App logic', () => {
     list.clearCompleted();
     expect(list.list).toHaveLength(1);
   });
-
 });
 
 describe('DOM Tests', () => {
