@@ -3,16 +3,31 @@ import List from './modules/list.js';
 
 describe('App logic', () => {
   const list = new List(Item, 'testing list', 'test list sto');
+
   test('Expect addItem to increase list length', () => {
     const listLength = list.list.length;
     list.addItem('Hola');
     expect(list.list.length).toBe(listLength + 1);
   });
+
   test('Expect removeItem to increase list length', () => {
     const listLength = list.list.length;
     list.removeItemByIndex(0);
     expect(list.list.length).toBe(listLength - 1);
   });
+
+  test('Expect the Clear Completed to clear all completed tasks', () => {
+    const list = new List(Item, 'testing list1', 'test list sto1');
+    document.body.innerHTML = '<div><ul id="list"></ul></div>';
+    const item1 = list.addItem('Task 1');
+    list.addItem('Task 2');
+    const item3 = list.addItem('Task 3');
+    item1.completed = !item1.completed;
+    item3.completed = !item3.completed;
+    list.clearCompleted();
+    expect(list.list).toHaveLength(1);
+  });
+
 });
 
 describe('DOM Tests', () => {
